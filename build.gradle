@@ -16,11 +16,11 @@ repositories {
 }
 
 dependencies {
-    implementation 'net.dv8tion:JDA:4.4.0_350'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
-    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.32'
-    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.32'
+    implementation("net.dv8tion:JDA:5.0.0-beta.2")
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.5'
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.5'
 }
 
 test {

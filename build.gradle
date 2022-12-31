@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'application'
+    id "com.github.johnrengelman.shadow" version "7.1.2"
+}
+
+group 'me.srin.boots'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        name 'm2-dv8tion'
+        url 'https://m2.dv8tion.net/releases'
+    }
+}
+
+dependencies {
+    implementation 'net.dv8tion:JDA:4.4.0_350'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.32'
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.32'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    mainClassName = 'me.srin.boots.Main'
+}
+
+shadowJar {
+    archiveFileName.set('BootsBot.jar')
+}
+task stage(dependsOn: ['build', 'shadowJar', 'clean', 'test'])
+build.mustRunAfter(clean)
+build.mustRunAfter(test)

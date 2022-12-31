@@ -29,7 +29,7 @@ public final class Main extends ListenerAdapter {
     private static final Random RANDOM = new Random();
     private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
     public static void main(String[] args) throws InterruptedException {
-        String token = "OTcxMzkzMTEwNjkxMTc2NDU4.GnK6Ga.54MmlJ6HQ4mLJGjsFIsXCHIH3g2MnjfZUECH58";
+        String token = System.getenv("TOKEN");
         var jda = JDABuilder.createDefault(
                 token
         ).setEnabledIntents(

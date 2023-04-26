@@ -1,1 +1,0 @@
-worker: java -jar build/libs/BootsBot.jar
